@@ -19,11 +19,13 @@ export default {
 
         // Read the user ID from the cookie during component mounting
         onMounted(() => {
+            console.log(document.cookie)
             const cookieValue = document.cookie
                 .split('; ')
                 .find((row) => row.startsWith('picalc_exchangeuserid='))
                 ?.split('=')[1];
 
+            console.log(document.cookieValue)
             // Set the userId ref with the value from the cookie
             userId.value = cookieValue || null;
         });
